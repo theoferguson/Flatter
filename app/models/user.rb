@@ -6,4 +6,11 @@ class User < ApplicationRecord
 
     validates :username, presence: true
     validates :username, uniqueness: true
+
+    private
+
+    def build_default_wall
+        build_wall
+        true
+    end
 end

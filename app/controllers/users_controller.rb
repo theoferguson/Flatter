@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     def create
         user = User.create(user_params)
         if user.valid?
+            Wall.create(user_id: user.id)
             session[:user_id] = user.id
             render json: user, status: :created
         else
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
     def show
         user = User.find_by(id: session[:user_id])
         if user
-            render json: user, status: :ok
+            render json: user.to_json(:include => [:wall]), status: :ok
         else
             render json: { error: "Not logged in" }, status: :unauthorized
         end
