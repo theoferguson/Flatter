@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 function Signup({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");

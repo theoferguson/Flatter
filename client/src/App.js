@@ -6,37 +6,53 @@ import AllProfiles from './AllProfiles'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Personal from './Personal';
 import Friendslist from './Friendslist'
+import Signup from './SignUp';
+import { useEffect, useState } from 'react';
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Header>
-        </Header>
-        <Personal>
-        </Personal>
-        <Friendslist>
-        </Friendslist>
-        <Switch>
-        <Route path="/">
-        <WallContainer>
-        </WallContainer>
-        </Route>
-        
-        <Route path="/allprofiles">
-        <AllProfiles>
+  const [user, setUser] = useState(null);
 
-        </AllProfiles>
-        </Route>
-            
+  useEffect(() => {
+    fetch('/me').then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
 
-      
+  if (user) {
+    return (
+      <Router>
+        <div className="App">
+          <Header>
+          </Header>
+          <Personal>
+          </Personal>
+          <Friendslist>
+          </Friendslist>
+          <Switch>
+            <Route path="/">
+              <WallContainer>
+              </WallContainer>
+            </Route>
 
-        </Switch>
-        
-      </div>
-    </Router>
-  );
+            <Route path="/allprofiles">
+              <AllProfiles>
+
+              </AllProfiles>
+            </Route>
+
+
+
+
+          </Switch>
+
+        </div>
+      </Router>
+    );
+  } else {
+    return <Signup />;
+  }
 }
 
 export default App;
