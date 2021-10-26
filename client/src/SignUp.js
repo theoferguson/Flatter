@@ -9,6 +9,16 @@ function Signup({ onLogin }) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        console.log({
+            username,
+            password,
+            password_confirmation: passwordConfirmation,
+            bio: newUser.bio,
+            full_name: newUser.full_name,
+            program: newUser.program,
+            hometown: newUser.hometown,
+            image_url: newUser.image_url
+        })
         fetch("/signup", {
             method: "POST",
             headers: {
@@ -17,7 +27,12 @@ function Signup({ onLogin }) {
             body: JSON.stringify({
                 username,
                 password,
-                password_confirmation: passwordConfirmation
+                password_confirmation: passwordConfirmation,
+                bio: newUser.bio,
+                full_name: newUser.full_name,
+                program: newUser.program,
+                hometown: newUser.hometown,
+                image_url: newUser.image_url
             }),
         })
             .then((r) => r.json())
