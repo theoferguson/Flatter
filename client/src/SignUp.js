@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './SignUp.css';
 
 function Signup({ onLogin }) {
     const [username, setUsername] = useState("");
@@ -24,12 +25,8 @@ function Signup({ onLogin }) {
             .then(onLogin);
     }
 
-    function newUserObject(e) {
-        const {value, id} = e.target
-        setNewUser({
-            ...newUser,
-            [id]: {value}
-        })
+    function handleChange(event) {
+        setNewUser({ ...newUser, [event.target.name]: event.target.value })
     }
 
     return (
@@ -60,35 +57,35 @@ function Signup({ onLogin }) {
                 type="text"
                 id="full_name"
                 value={newUser.full_name}
-                onChange={(e) => newUserObject(e)}
+                onChange={(e) => handleChange}
             />
             <label htmlFor="program">Program:</label>
             <input
                 type="text"
                 id="program"
                 value={newUser.program}
-                onChange={(e) => newUserObject(e)}
+                onChange={(e) => handleChange}
             />
             <label htmlFor="hometown">Hometown:</label>
             <input
                 type="text"
                 id="hometown"
                 value={newUser.hometown}
-                onChange={(e) => newUserObject(e)}
+                onChange={(e) => handleChange}
             />
             <label htmlFor="profile_picture">Profile Picture:</label>
             <input
                 type="text"
                 id="image_url"
                 value={newUser.image_url}
-                onChange={(e) => newUserObject(e)}
+                onChange={(e) => handleChange}
             />
             <label htmlFor="bio">Biography:</label>
             <input
                 type="text"
                 id="bio"
                 value={newUser.bio}
-                onChange={(e) => newUserObject(e)}
+                onChange={(e) => handleChange}
             />
             <button type="submit">Submit</button>
         </form>
