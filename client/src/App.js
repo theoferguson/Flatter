@@ -8,6 +8,7 @@ import Personal from './Personal';
 import Friendslist from './Friendslist'
 import Signup from './SignUp';
 import { useEffect, useState } from 'react';
+import Login from './Login';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -28,12 +29,21 @@ function App() {
     });
   };
 
+  function onLogout() {
+    fetch('/me').then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      } else {
+        setUser(null)
+      }
+    });
+  };
+
   if (user) {
     return (
       <Router>
         <div className="App">
-          <Header>
-          </Header>
+          <Header onLogout={onLogout} />
           <Personal>
           </Personal>
           <Friendslist>
@@ -59,7 +69,10 @@ function App() {
       </Router>
     );
   } else {
-    return <Signup onLogin={onLogin} />;
+    return <>
+      <Signup onLogin={onLogin} />
+      <Login onLogin={onLogin} />
+    </>;
   }
 }
 
