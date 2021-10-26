@@ -20,6 +20,14 @@ function App() {
     });
   }, []);
 
+  function onLogin() {
+    fetch('/me').then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  };
+
   if (user) {
     return (
       <Router>
@@ -51,7 +59,7 @@ function App() {
       </Router>
     );
   } else {
-    return <Signup />;
+    return <Signup onLogin={onLogin} />;
   }
 }
 
