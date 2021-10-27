@@ -1,11 +1,15 @@
 
-function ProfileCard() {
+function ProfileCard({user}) {
 
     return (
         <div className="ProfileCard">
-            <p> test
-            </p>
-
+            <li>
+                {user.username}
+                <p>
+                    {user.full_name}
+                    {user.hometown}
+                </p>
+            </li>
         </div>
     )
 

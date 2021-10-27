@@ -6,20 +6,27 @@ function AllProfiles() {
 
     useEffect(() => {
         fetch('/users')
-        .then(res => res.json())
-        .then(json => {
-            setUsers(json)
-        })
+            .then(res => res.json())
+            .then(json => {
+                setUsers(json)
+            })
     }, []);
 
-
+    const allProfileCards = users.map((user) => {
+        return (
+            <li>
+                <ProfileCard user={user} />
+            </li>
+        )
+    })
 
     return (
         <div className="Wall">
             <p> ALL
             </p>
-            {/* <ProfileCard>
-            </ProfileCard> */}
+            <ul>
+                {allProfileCards}
+            </ul>
         </div>
     )
 

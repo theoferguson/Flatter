@@ -30,7 +30,7 @@ function WallContainer({ user }) {
             <p> wall
             </p>
             <NewStatusForm user={user} handleNewStatus={handleNewStatus} />
-            {/* {listComments} */}
+            {listComments}
         </div>
     );
 
