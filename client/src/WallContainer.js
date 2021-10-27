@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import NewStatusForm from "./NewStatusForm";
 
 function WallContainer({ user }) {
-    const [content, setContent] = useState("");
+    const [content, setContent] = useState([]);
     const [commentLoad, setCommentLoad] = useState(false)
 
 
@@ -14,9 +14,12 @@ function WallContainer({ user }) {
             })
     }, commentLoad);
 
-    // const listComments = content.map((comment) =>
-    //     <li>{comment.content}</li>
-    // );
+    console.log(content)
+
+    const listComments = content.map((comment) =>
+        <li>{comment.content}</li>
+       
+    );
 
     function handleNewStatus() {
         setCommentLoad(!commentLoad)
