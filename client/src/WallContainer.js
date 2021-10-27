@@ -1,32 +1,35 @@
 import { useState, useEffect } from 'react'
-import NewStatusForm from "./NewStatus";
+import NewStatusForm from "./NewStatusForm";
 
-function WallContainer() {
+function WallContainer({ user }) {
     const [content, setContent] = useState("");
+    const [commentLoad, setCommentLoad] = useState(false)
 
 
     useEffect(() => {
-        fetch("http://localhost:4000/")
+        fetch("/comments")
             .then((r) => r.json())
             .then(statusArray => {
                 setContent(statusArray)
             })
-    }, [])
+    }, commentLoad);
 
-    function handleNewStatus(newStatus) {
-        const updatedStatus = [...content, newStatus];
-        setContent(updatedStatus)
+    const listComments = content.map((comment) =>
+        <li>{comment.content}</li>
+    );
 
+    function handleNewStatus() {
+        setCommentLoad(!commentLoad)
     }
 
     return (
         <div className="Wall">
             <p> wall
             </p>
-        
-        <NewStatusForm handleNewStatus={handleNewStatus}/>
+            <NewStatusForm user={user} handleNewStatus={handleNewStatus} />
+            {listComments}
         </div>
-    )
+    );
 
 }
 

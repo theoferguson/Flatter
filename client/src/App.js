@@ -50,7 +50,7 @@ function App() {
           </Friendslist>
           <Switch>
             <Route path="/">
-              <WallContainer>
+              <WallContainer user={user} >
               </WallContainer>
             </Route>
 
