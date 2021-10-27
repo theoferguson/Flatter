@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Header'
 import WallContainer from './WallContainer'
 import AllProfiles from './AllProfiles'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Personal from './Personal';
 import Friendslist from './Friendslist'
 import Signup from './SignUp';
@@ -43,29 +43,20 @@ function App() {
     return (
       <Router>
         <div className="App">
-          <Header onLogout={onLogout} />
+          <Header onLogout={onLogout} user={user} />
           <Personal>
           </Personal>
           <Friendslist>
           </Friendslist>
-          <Switch>
-            <Route path="/">
-              <WallContainer user={user} >
-              </WallContainer>
-            </Route>
-
-            <Route path="/allprofiles">
-              <AllProfiles>
-
-              </AllProfiles>
-            </Route>
-
-
-
-
-          </Switch>
-
         </div>
+        <Switch>
+          <Route path="/allprofiles">
+            <AllProfiles />
+          </Route>
+          <Route path="/">
+            <WallContainer user={user} />
+          </Route>
+        </Switch>
       </Router>
     );
   } else {

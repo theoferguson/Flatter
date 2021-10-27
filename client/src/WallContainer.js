@@ -14,9 +14,9 @@ function WallContainer({ user }) {
             })
     }, commentLoad);
 
-    const listComments = content.map((comment) =>
-        <li>{comment.content}</li>
-    );
+    // const listComments = content.map((comment) =>
+    //     <li>{comment.content}</li>
+    // );
 
     function handleNewStatus() {
         setCommentLoad(!commentLoad)
@@ -27,7 +27,7 @@ function WallContainer({ user }) {
             <p> wall
             </p>
             <NewStatusForm user={user} handleNewStatus={handleNewStatus} />
-            {listComments}
+            {/* {listComments} */}
         </div>
     );
 

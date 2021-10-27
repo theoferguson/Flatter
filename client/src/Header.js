@@ -1,6 +1,8 @@
-import { Route, Link } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
+import WallContainer from './WallContainer';
+import AllProfiles from './AllProfiles';
 
-function Header({onLogout}) {
+function Header({ onLogout, user }) {
 
     function handleLogout() {
         fetch("/logout", {
@@ -12,11 +14,7 @@ function Header({onLogout}) {
         <div className="App-header">
             <p> Welcome to Flatter</p>
             <div className="Header-buttons">
-                <Link to={`/allprofiles`}>
-                    <button>
-                        All Profiles
-                    </button>
-                </Link>
+                <Link to="/allprofiles">All Profiles</Link>
                 <Link to={`/`}>
                     <button>
                         Wall
