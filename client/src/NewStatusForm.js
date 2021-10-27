@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function NewStatusForm({ handleNewStatus, user }) {
-    const [content, setContent] = useState("")
+    const [content, setContent] = useState([])
 
 
     function handleSubmit(e) {
