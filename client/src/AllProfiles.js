@@ -1,4 +1,4 @@
-import ProfileCard from "./ProfileCard";
+import UserCard from "./UserCard";
 import { useEffect, useState } from 'react';
 
 function AllProfiles() {
@@ -12,10 +12,10 @@ function AllProfiles() {
             })
     }, []);
 
-    const allProfileCards = users.map((user) => {
+    const allUserCards = users.map((user) => {
         return (
             <li>
-                <ProfileCard user={user} />
+                <UserCard user={user} />
             </li>
         )
     })
@@ -25,7 +25,7 @@ function AllProfiles() {
             <p> ALL
             </p>
             <ul>
-                {allProfileCards}
+                {allUserCards}
             </ul>
         </div>
     )

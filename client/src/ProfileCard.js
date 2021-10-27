@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 function ProfileCard() {
@@ -50,8 +49,7 @@ function ProfileCard() {
             <h3>Bio:</h3>
             <p>{deets.bio} </p>
             <button onClick={()=> setShow(show => !show)}></button>
-            <Modal 
-          onClose={()=>setShow(show => !show)} show={show} edit={edit} setEdit={setEdit} handleEdit={handleEdit}/>
+            <Modal onClose={()=>setShow(show => !show)} show={show} edit={edit} setEdit={setEdit} handleEdit={handleEdit}/>
         </div>
     )
 

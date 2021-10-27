@@ -1,3 +1,4 @@
+import ProfileCard from "./ProfileCard";
 
 function Personal() {
 
@@ -5,6 +6,7 @@ function Personal() {
         <div className="Personal">
             <p> Details
             </p>
+            <ProfileCard />
           
         </div>
     )

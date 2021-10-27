@@ -46,8 +46,8 @@ function App() {
           <Header onLogout={onLogout} user={user} />
           <Personal>
           </Personal>
-          <Friendslist>
-          </Friendslist>
+          {/* <Friendslist>
+          </Friendslist> */}
         </div>
         <Switch>
           <Route path="/allprofiles">
