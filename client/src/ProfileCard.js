@@ -1,17 +1,4 @@
-<<<<<<< Updated upstream
 
-function ProfileCard({user}) {
-
-    return (
-        <div className="ProfileCard">
-            <li>
-                {user.username}
-                <p>
-                    {user.full_name}
-                    {user.hometown}
-                </p>
-            </li>
-=======
 import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 function ProfileCard() {
@@ -65,8 +52,6 @@ function ProfileCard() {
             <button onClick={()=> setShow(show => !show)}></button>
             <Modal 
           onClose={()=>setShow(show => !show)} show={show} edit={edit} setEdit={setEdit} handleEdit={handleEdit}/>
-
->>>>>>> Stashed changes
         </div>
     )
 
