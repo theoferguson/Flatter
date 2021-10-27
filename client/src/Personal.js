@@ -5,8 +5,7 @@ function Personal() {
         <div className="Personal">
             <p> Details
             </p>
-            {/* <ProfileCard>
-            </ProfileCard> */}
+          
         </div>
     )
 

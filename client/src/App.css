@@ -49,6 +49,10 @@
     
 }
 
+.new-status-form {
+
+  float: center;
+}
 .Personal {
   float: center;
   font-size: calc(10px + 2vmin);

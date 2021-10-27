@@ -6,7 +6,7 @@ function WallContainer() {
 
 
     useEffect(() => {
-        fetch("http://localhost:4000")
+        fetch("http://localhost:4000/")
             .then((r) => r.json())
             .then(statusArray => {
                 setContent(statusArray)
@@ -21,7 +21,7 @@ function WallContainer() {
 
     return (
         <div className="Wall">
-            <p> Wall
+            <p> wall
             </p>
         
         <NewStatusForm handleNewStatus={handleNewStatus}/>
