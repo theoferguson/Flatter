@@ -35,6 +35,11 @@ class UsersController < ApplicationController
         end
     end
 
+    def profile
+        user = User.find_by(id: params[:id])
+        render json: user.to_json(:include => {:wall => {:include => [:comments]}}), status: :ok
+    end
+
     private
 
     def user_params

@@ -1,5 +1,7 @@
 import UserCard from "./UserCard";
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import ProfilePage from "./ProfilePage";
 
 function AllProfiles() {
     const [users, setUsers] = useState([])
@@ -15,19 +17,31 @@ function AllProfiles() {
     const allUserCards = users.map((user) => {
         return (
             <li>
-                <UserCard user={user} />
+                <Link to={`/allprofiles/${user.id}`}>
+                    <UserCard user={user} />
+                </Link>
             </li>
         )
     })
 
     return (
-        <div className="Wall">
-            <p> ALL
-            </p>
-            <ul>
-                {allUserCards}
-            </ul>
-        </div>
+        <Router>
+            <div className="Wall">
+                <Switch>
+                    <Route exact path='/allprofiles/:id'>
+                        <ProfilePage />
+                    </Route>
+                    <Route path='/allprofiles'>
+                        <p> ALL
+                        </p>
+                        <ul>
+                            {allUserCards}
+                        </ul>
+                    </Route>
+                </Switch>
+
+            </div>
+        </Router>
     )
 
 }
