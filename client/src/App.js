@@ -42,6 +42,7 @@ function App() {
 
   function handleFriends(e, props){
     e.preventDefault()
+    console.log(props.id)
     fetch (`/users/${user.id}`, {
         method: "PATCH",
         headers: {

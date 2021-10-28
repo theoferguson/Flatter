@@ -27,12 +27,12 @@ class UsersController < ApplicationController
 
     def update
         user = User.find_by(id: session[:user_id])
-        if params[:bio] 
-           user.update(bio: params[:bio])
+        if params[:user][:id]
+            # byebug
+            user.update(friends: user.friends.push(params[:user][:id]))
+        elsif params[:bio]
+            user.update(bio: params[:bio])
            render json: user
-        elsif params[:id]
-            user.update(friends: user.friends << [params[:id]])
-
         else 
             render json: { error: "User not found" }, status: :not_found
         end
