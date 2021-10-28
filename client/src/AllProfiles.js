@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import ProfilePage from "./ProfilePage";
 
-function AllProfiles() {
+function AllProfiles({handleFriends}) {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
@@ -16,9 +16,7 @@ function AllProfiles() {
 
     const allUserCards = users.map((user) => {
         return (
-            <Link to={`/allprofiles/${user.id}`}>
-                <UserCard user={user} />
-            </Link>
+                <UserCard user={user} handleFriends={handleFriends}/>
         )
     })
 

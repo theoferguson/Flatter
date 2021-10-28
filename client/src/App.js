@@ -12,6 +12,7 @@ import Login from './Login';
 
 function App() {
   const [user, setUser] = useState(null);
+  // const [friends, setFriends] = useState([])
 
   useEffect(() => {
     fetch('/me').then((r) => {
@@ -39,6 +40,18 @@ function App() {
     });
   };
 
+  function handleFriends(e, props){
+    e.preventDefault()
+    fetch (`/users/${user.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+        }, body: JSON.stringify(props)
+    }) 
+    .then((r)=> r.json())
+    .then(userDeets => console.log(userDeets))
+}
+
   if (user) {
     return (
       <Router>
@@ -46,12 +59,12 @@ function App() {
           <Header onLogout={onLogout} user={user} />
           <Personal>
           </Personal>
-          {/* <Friendslist>
-          </Friendslist> */}
+          <Friendslist >
+          </Friendslist>
         </div>
         <Switch>
           <Route path="/allprofiles">
-            <AllProfiles />
+            <AllProfiles handleFriends={handleFriends}/>
           </Route>
           <Route path="/">
             <WallContainer user={user} />

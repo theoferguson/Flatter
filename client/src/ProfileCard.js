@@ -19,8 +19,8 @@ function ProfileCard() {
             })
     }, []) 
 
-    function handleEdit(event, id){
-        event.preventDefault()
+    function handleEdit(e, id){
+        e.preventDefault()
         fetch (`/users/${id}`, {
             method: "PATCH",
             headers: {
@@ -49,7 +49,7 @@ function ProfileCard() {
             <h3>Bio:</h3>
             <p>{deets.bio} </p>
             <button onClick={()=> setShow(show => !show)}></button>
-            <Modal onClose={()=>setShow(show => !show)} show={show} edit={edit} setEdit={setEdit} handleEdit={handleEdit}/>
+            <Modal onClose={()=>setShow(show => !show)} show={show} edit={edit} setEdit={setEdit} handleEdit={handleEdit} deets={deets}/>
         </div>
     )
 
