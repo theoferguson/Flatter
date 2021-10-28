@@ -49,6 +49,14 @@
     
 }
 
+.comments {
+  float: left;
+}
+
+.delete-comment {
+  float: center;
+}
+
 .new-status-form {
 
   float: center;

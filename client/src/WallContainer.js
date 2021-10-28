@@ -45,16 +45,18 @@ function WallContainer({ user }) {
 
             <NewStatusForm user={user} handleNewStatus={handleNewStatus} handleDeleteComments={handleDeleteComments} />
 
-            {listComments}
-
+            <div className="comments"> {listComments} </div>
+            <span className="delete-comment">
             {content.map((comment) => (
-                <li key={comment.id}>
+                <div key={comment.id}>
                     <button onClick={() => handleDeleteComments(comment.id)}>
-                        Delete
+                          Delete
                     </button>
-                </li>
+               
+                </div>
             ))}
-
+            </span>
+            
 
         </div>
     );
