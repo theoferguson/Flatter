@@ -16,11 +16,9 @@ function AllProfiles() {
 
     const allUserCards = users.map((user) => {
         return (
-            <li>
-                <Link to={`/allprofiles/${user.id}`}>
-                    <UserCard user={user} />
-                </Link>
-            </li>
+            <Link to={`/allprofiles/${user.id}`}>
+                <UserCard user={user} />
+            </Link>
         )
     })
 
