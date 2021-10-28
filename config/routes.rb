@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :walls 
   resources :comments, only: [:index, :show, :create, :destroy]
-  resources :users, only: [:index]
+  resources :users
 
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
