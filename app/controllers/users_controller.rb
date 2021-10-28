@@ -27,9 +27,12 @@ class UsersController < ApplicationController
 
     def update
         user = User.find_by(id: session[:user_id])
-        if user
+        if params[:bio] 
            user.update(bio: params[:bio])
            render json: user
+        elsif params[:id]
+            user.update(friends: user.friends << [params[:id]])
+
         else 
             render json: { error: "User not found" }, status: :not_found
         end
@@ -40,10 +43,11 @@ class UsersController < ApplicationController
         render json: user.to_json(:include => {:wall => {:include => [:comments]}}), status: :ok
     end
 
+
     private
 
     def user_params
-        params.permit(:username, :password, :password_confirmation, :full_name, :program, :hometown, :image_url, :bio)
+        params.permit(:username, :password, :password_confirmation, :full_name, :program, :hometown, :image_url, :bio, :friends)
     end
 
 end

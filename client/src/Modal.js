@@ -1,6 +1,6 @@
 const Modal = props => {
 
-    const {show, edit, setEdit, handleEdit} = props; 
+    const {show, edit, setEdit, handleEdit, deets} = props; 
         if (!show){
             return null
         }
@@ -8,7 +8,7 @@ const Modal = props => {
     
         return (
             <div className="modal">
-                <form onSubmit={handleEdit} className="modal">
+                <form onSubmit={(e)=> handleEdit(e, deets.id)} className="modal">
                 <input type="text" content="bio"  placeholder="update bio..."  onChange={(e) => setEdit(e.target.value)} className="modal"/>
                 <button type="submit">Update Bio</button>
                 </form>
