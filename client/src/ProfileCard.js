@@ -19,9 +19,9 @@ function ProfileCard() {
             })
     }, []) 
 
-    function handleEdit(e, id){
+    function handleEdit(e){
         e.preventDefault()
-        fetch (`/users/${id}`, {
+        fetch (`/users/${deets.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -34,7 +34,8 @@ function ProfileCard() {
             program: userDeets.program,
             bio: edit,
             id: userDeets.id
-        }))
+        }),
+        setShow(!show))
     }
     
 
@@ -48,7 +49,7 @@ function ProfileCard() {
             <p> {deets.hometown}</p>
             <h3>Bio:</h3>
             <p>{deets.bio} </p>
-            <button onClick={()=> setShow(show => !show)}></button>
+            <button onClick={()=> setShow(show => !show)}>Edit Bio</button>
             <Modal onClose={()=>setShow(show => !show)} show={show} edit={edit} setEdit={setEdit} handleEdit={handleEdit} deets={deets}/>
         </div>
     )
