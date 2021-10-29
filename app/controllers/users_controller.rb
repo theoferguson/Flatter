@@ -29,7 +29,8 @@ class UsersController < ApplicationController
         user = User.find_by(id: session[:user_id])
         if params[:user][:id]
             # byebug
-            user.update(friends: user.friends.push(params[:user][:id]))
+            user.update(friends: user.friends.push(params[:user][:id].to_i))
+            render json: user.friends, status: :ok
         elsif params[:bio]
             user.update(bio: params[:bio])
            render json: user

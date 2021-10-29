@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function UserCard({ user, handleFriends }) {
+function UserCard({ user, handleFriends, friend }) {
     return (
         <div className="ProfileCard">
             <li>
@@ -10,7 +10,7 @@ function UserCard({ user, handleFriends }) {
                     <p>{user.hometown}</p>
                  </h1>
                     <Link to={`/allprofiles/${user.id}`}>See Full Profile </Link>
-                    <button onClick={(e)=> handleFriends(e, user)}>Add Friend</button>
+                    {friend ? null : <button onClick={(e)=> handleFriends(e, user)}>Add Friend</button>}
             </li>
         </div>
     )

@@ -12,7 +12,7 @@ import Login from './Login';
 
 function App() {
   const [user, setUser] = useState(null);
-  // const [friends, setFriends] = useState([])
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
     fetch('/me').then((r) => {
@@ -58,14 +58,12 @@ function App() {
       <Router>
         <div className="App">
           <Header onLogout={onLogout} user={user} />
-          <Personal>
-          </Personal>
-          <Friendslist >
-          </Friendslist>
+          <Personal />
+          <Friendslist user={user} users={users} />
         </div>
         <Switch>
           <Route path="/allprofiles">
-            <AllProfiles handleFriends={handleFriends}/>
+            <AllProfiles handleFriends={handleFriends} users={users} setUsers={setUsers} />
           </Route>
           <Route path="/">
             <WallContainer user={user} />
