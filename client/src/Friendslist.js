@@ -1,4 +1,7 @@
 import UserCard from './UserCard';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import ProfilePage from './ProfilePage';
+
 
 function Friendslist({ user, users }) {
 
@@ -6,25 +9,29 @@ function Friendslist({ user, users }) {
 
     const allFriendCards = users.map((friend) => {
         for (let i = 0; i < friendIds.length; i++) {
-        if(friend.id == friendIds[i]) {
-            console.log("ok")
-        return (
-                <UserCard user={friend} friend={true} />
-        )
+            if (friend.id == friendIds[i]) {
+                console.log("ok")
+                return (
+                    <UserCard user={friend} friend={true} />
+                )
+            }
         }
-    }})
+    })
 
     return (
         <div className="Friendslist">
-<<<<<<< HEAD
             <p> Friends
             </p>
-            {allFriendCards}
+            <Switch>
+                <Route exact path='/friends/:id'>
+                    <ProfilePage />
+                </Route>
+                <Route path='/'>
+                    {allFriendCards}
+                </ Route>
+
+            </Switch>
         </div>
-=======
-            <p> Friends</p>
-       </div>
->>>>>>> d0dc2cff3f84f37a4ca2dd5835502b891e34ec69
     )
 
 }

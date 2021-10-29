@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/allprofiles/:id', to: 'users#profile'
-  
+  get '/friends/:id', to: 'users#profile'
 
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
