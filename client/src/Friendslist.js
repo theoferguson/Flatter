@@ -8,10 +8,8 @@ function Friendslist({friends}) {
 
     return (
         <div className="Friendslist">
-            <p> Friends
-            </p>
-       
-        </div>
+            <p> Friends</p>
+       </div>
     )
 
 }

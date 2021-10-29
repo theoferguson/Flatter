@@ -40,8 +40,8 @@ function WallContainer({ user }) {
 
     return (
         <div className="Wall">
-            <p> wall
-            </p>
+            <h1>Wall</h1> 
+            
 
             <NewStatusForm user={user} handleNewStatus={handleNewStatus} handleDeleteComments={handleDeleteComments} />
 
