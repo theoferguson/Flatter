@@ -31,7 +31,7 @@ function NewStatusForm({ handleNewStatus, user }) {
 
     return (
         <div className="new-status-form">
-            <h2>New Status</h2>
+            <p>New Status</p>
             <form onSubmit={handleSubmit} >
                 <input type="text" content="status" placeholder="new status..." value={content} onChange={(e) => setContent(e.target.value)} />
 

@@ -12,9 +12,11 @@ function Header({ onLogout, user }) {
 
     return (
         <div className="App-header">
-            <p> Welcome to Flatter</p>
+            <h1> Welcome to Flatter!</h1>
             <div className="Header-buttons">
-                <Link to="/allprofiles">All Profiles</Link>
+                <Link to="/allprofiles">
+                    <button>All Profiles</button>
+                </Link>
                 <Link to={`/`}>
                     <button>
                         Wall

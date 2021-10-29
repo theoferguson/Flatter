@@ -27,8 +27,8 @@ function AllProfiles({handleFriends, users, setUsers}) {
                         <ProfilePage />
                     </Route>
                     <Route path='/allprofiles'>
-                        <p> ALL
-                        </p>
+                        <h1> All Profiles
+                        </h1>
                         <ul>
                             {allUserCards}
                         </ul>

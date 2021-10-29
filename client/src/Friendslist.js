@@ -16,10 +16,15 @@ function Friendslist({ user, users }) {
 
     return (
         <div className="Friendslist">
+<<<<<<< HEAD
             <p> Friends
             </p>
             {allFriendCards}
         </div>
+=======
+            <p> Friends</p>
+       </div>
+>>>>>>> d0dc2cff3f84f37a4ca2dd5835502b891e34ec69
     )
 
 }
