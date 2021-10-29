@@ -140,6 +140,7 @@
   color: white;
   border-bottom-left-radius: 80px 80px;
   border-bottom-right-radius: 80px 80px;
+  
 }
 
 .login {
@@ -147,6 +148,22 @@
     border-bottom-left-radius: 80px 80px;
   border-bottom-right-radius: 80px 80px;
     
+
+}
+
+.login-style {
+  text-align: center;
+  color: white;
+  margin: bottom 10px;
+  
+
+  
+}
+
+.signup-div {
+  text-align: center;
+  color: white;
+  margin: bottom 10px;
 
 }
 
