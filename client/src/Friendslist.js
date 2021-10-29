@@ -20,7 +20,6 @@ function Friendslist({ user, users }) {
 
     return (
         <div className="Friendslist">
-<<<<<<< HEAD
             <p> Friends
             </p>
             <Switch>
@@ -33,10 +32,6 @@ function Friendslist({ user, users }) {
 
             </Switch>
         </div>
-=======
-            <p> Friends</p>
-       </div>
->>>>>>> b091a8da1cf6473a949c7e758798057b55c66e08
     )
 
 }
