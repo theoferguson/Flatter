@@ -40,8 +40,7 @@
 .allprofiles {
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(22,131,189,1) 0%, rgba(0,212,255,1) 100%);
-   border-bottom-left-radius: 80px 80px;
-  border-bottom-right-radius: 80px 80px;
+ 
   float: center;
 }
 
@@ -49,11 +48,11 @@
   float: center;
   font-size: calc(10px + 2vmin);
   background-color: white;
-  align-self: right;
+  align-self: center;
   position: absolute;
-  right: 200px;
+  right: 280px;
   left: absolute;
-  width: 700px;
+  width: 600px;
   border: 3px solid black;
   padding: 10x;
   text-align: center;
@@ -61,6 +60,7 @@
   background-color:	#F8F8F8;
   padding: auto;
   height: auto;
+    border-radius: 25px;
 }
 
 
@@ -95,6 +95,7 @@
   border:3px solid black;
   padding: 10x;
   margin: 0px auto;
+    border-radius: 25px;
    
 
 }
@@ -107,12 +108,13 @@
   align-self: left;
   position: absolute;
   right: 0px;
-  width: 200px;
+  width: auto;
   border: 3px solid black;
   padding: 10x;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(22,131,189,1) 0%, rgba(0,212,255,1) 100%);
   margin: 0px auto;
+    border-radius: 25px;
  
 }
 
@@ -129,8 +131,8 @@
   background-repeat: no-repeat;
   font-size: 14px;
   position: relative;
-  left: auto
-  
+  left: auto;
+    border-radius: 25px;
   
 
 }
