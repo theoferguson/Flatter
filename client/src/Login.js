@@ -21,22 +21,26 @@ function Login({ onLogin}) {
     }
 
     return (
-    
+        <div>
             <div className="login">
+                
                 <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <button type="submit">Login</button>
+                    <div className="login-style"> Login
+                        <div>
+                            <input
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}/>
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
+                        <button type="submit">Login</button>
+                    </div>
                 </form>
             </div>
+        </div>
         
     );
 };

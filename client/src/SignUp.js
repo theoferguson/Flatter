@@ -34,82 +34,84 @@ function Signup({ onLogin }) {
     }
 
     return (
-        <div>
+        <div> 
             <h1 className="signup-header">Welcome to Flatter!</h1>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        type="text"
-                        name="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
+                <div className="signup-div">Signup
+                    <div> 
+                        <label htmlFor="username">Username:</label>
+                        <input
+                            type="text"
+                            name="username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password_confirmation">Confirm Password:</label>
+                        <input
+                            type="password"
+                            name="password_confirmation"
+                            value={passwordConfirmation}
+                            onChange={(e) => setPasswordConfirmation(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="full_name">Full Name:</label>
+                        <input
+                            type="text"
+                            name="full_name"
+                            value={newUser.full_name}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="program">Program:</label>
+                        <input
+                            type="text"
+                            name="program"
+                            value={newUser.program}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="hometown">Hometown:</label>
+                        <input
+                            type="text"
+                            name="hometown"
+                            value={newUser.hometown}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="profile_picture">Profile Picture:</label>
+                        <input
+                            type="text"
+                            name="image_url"
+                            value={newUser.image_url}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="bio">Biography:</label>
+                        <input
+                            type="text"
+                            name="bio"
+                            value={newUser.bio}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <button type="submit">Create Account</button>
                 </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password_confirmation">Confirm Password:</label>
-                    <input
-                        type="password"
-                        name="password_confirmation"
-                        value={passwordConfirmation}
-                        onChange={(e) => setPasswordConfirmation(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="full_name">Full Name:</label>
-                    <input
-                        type="text"
-                        name="full_name"
-                        value={newUser.full_name}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="program">Program:</label>
-                    <input
-                        type="text"
-                        name="program"
-                        value={newUser.program}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="hometown">Hometown:</label>
-                    <input
-                        type="text"
-                        name="hometown"
-                        value={newUser.hometown}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="profile_picture">Profile Picture:</label>
-                    <input
-                        type="text"
-                        name="image_url"
-                        value={newUser.image_url}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="bio">Biography:</label>
-                    <input
-                        type="text"
-                        name="bio"
-                        value={newUser.bio}
-                        onChange={handleChange}
-                    />
-                </div>
-                <button type="submit">Create Account</button>
             </form>
         </div>
     );
